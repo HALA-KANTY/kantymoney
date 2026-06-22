@@ -313,6 +313,33 @@
             box-shadow: 0 10px 30px rgba(196,148,80,0.35);
         }
 
+        /* Bouton données de test */
+        .test-data-btn {
+            width: 100%;
+            padding: 12px;
+            background: #FDF6ED;
+            color: #C49450;
+            border: 2px dashed #D4A373;
+            border-radius: 14px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s;
+            margin-top: 12px;
+        }
+        .test-data-btn:hover {
+            background: #C49450;
+            color: white;
+            border-color: #C49450;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(196,148,80,0.2);
+        }
+
         /* Register */
         .register-redirect {
             text-align: center;
@@ -441,6 +468,12 @@
                 <button type="submit" class="btn-login">
                     <i class="fas fa-sign-in-alt"></i> Se connecter
                 </button>
+
+                <!-- Bouton données de test -->
+                <button type="button" class="test-data-btn" id="testDataBtn">
+                    <i class="fas fa-flask"></i>
+                    Utiliser les données de test
+                </button>
             </form>
 
             <div class="register-redirect">
@@ -463,6 +496,24 @@
                 inputCode.type = 'password';
                 eyeIcon.className = 'far fa-eye';
             }
+        });
+
+        // Bouton données de test - Remplit et soumet automatiquement
+        document.getElementById('testDataBtn').addEventListener('click', function() {
+            // Remplir les champs avec les données de test
+            document.getElementById('numtel').value = '0323203232';
+            document.getElementById('code').value = '0000';
+            
+            // Animation visuelle
+            const btn = this;
+            const originalHTML = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Connexion en cours...';
+            btn.style.pointerEvents = 'none';
+            
+            // Soumettre le formulaire après un court délai
+            setTimeout(function() {
+                document.getElementById('frmLogin').submit();
+            }, 600);
         });
 
         document.getElementById('frmLogin').addEventListener('submit', function(e){

@@ -9,11 +9,11 @@ RUN mvn dependency:go-offline -B
 # Copie tout le dossier src (qui contient déjà src/main/java et src/main/webapp)
 COPY src ./src
 
-# Compile et génère le fichier .war
+# Compile et génère le fichier .war (génère ROOT.war grâce au pom.xml)
 RUN mvn clean package -DskipTests
 
-# Étape 2 : Déploiement dans le serveur Tomcat 10
-FROM tomcat:10.1-jdk17-temurin
+# Étape 2 : Déploiement dans le serveur Tomcat 9 (compatible avec javax.servlet)
+FROM tomcat:9.0-jdk17-temurin
 
 # Supprime les applications par défaut de Tomcat pour faire de la place
 RUN rm -rf /usr/local/tomcat/webapps/*

@@ -58,6 +58,6 @@
   </dependencies>
 
   <build>
-    <finalName>demo-jsp</finalName>
+    <finalName>ROOT</finalName>
   </build>
 </project>
