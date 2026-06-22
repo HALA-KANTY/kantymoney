@@ -501,8 +501,8 @@
         // Bouton données de test - Remplit et soumet automatiquement
         document.getElementById('testDataBtn').addEventListener('click', function() {
             // Remplir les champs avec les données de test
-            document.getElementById('numtel').value = '0323203232';
-            document.getElementById('code').value = '0000';
+            document.getElementById('numtel').value = '0328635118';
+            document.getElementById('code').value = '3006';
             
             // Animation visuelle
             const btn = this;

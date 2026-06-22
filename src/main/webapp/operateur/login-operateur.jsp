@@ -717,7 +717,7 @@
         // Bouton données de test - Remplit et soumet automatiquement
         document.getElementById('testDataBtn').addEventListener('click', function() {
             // Remplir les champs avec les données de test
-            document.getElementById('mail').value = 'katymoney@admin.com';
+            document.getElementById('mail').value = 'kantymoney@admin.com';
             document.getElementById('mot_de_passe').value = 'kanty2026';
             
             // Ajouter une petite animation visuelle
